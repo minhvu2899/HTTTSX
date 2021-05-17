@@ -36,7 +36,7 @@ class DB
         $this->query_builder = TRUE;
         $this->con = mysqli_connect($this->cleardb_server, $this->cleardb_username, $this->cleardb_password, $this->cleardb_db);
         // mysqli_select_db($this->con,$this->dbname)
-        mysqli_query($this->con, "SET NAMES 'utf-8'");
+        mysqli_set_charset($this->con, 'UTF8');
         if ($this->con->connect_error) {
             die("Connection failed: " . $this->con->connect_error);
         }
