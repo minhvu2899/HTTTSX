@@ -97,7 +97,7 @@ class Login extends Controller
         unset($_SESSION['admin']);
         unset($_SESSION['nvk']);
         unset($_SESSION['nvsx']);
-        session_destroy();
+        // session_destroy();
         header("location:https://hethongquanlisanxuat.herokuapp.com/");
     }
 }
