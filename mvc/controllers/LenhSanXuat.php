@@ -15,15 +15,11 @@ class LenhSanXuat extends Controller
     }
     function SayHi()
     {
-        if (!isset($_SESSION['admin'])) {
-            session_start();
-            header('location: https://hethongquanlisanxuat.herokuapp.com/');
-        }
-
         $listLenhSX = $this->lsx->getListLSX();
         while ($row = mysqli_fetch_array($listLenhSX)) {
+            $checkTonTai = $this->ctcd->checkTonTai($row[0]);
             $check = $this->ctcd->checkStatus($row[0]);
-            if ($check == 0 && $row['status'] == 0) {
+            if ($check == 0 && $checkTonTai != 0) {
                 $kq = $this->lsx->updateStatus(2, $row[0]);
             }
         }
@@ -44,12 +40,14 @@ class LenhSanXuat extends Controller
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }
-        $name = `lenhsx$id_ycsx`;
+        $name = "lenhsx$id_ycsx";
         // unset($_SESSION[$name]);
         if (isset($_SESSION[$name])) {
-            $id = $this->lsx->getIDByYC($id_ycsx);
-
-            header("Location: https://hethongquanlisanxuat.herokuapp.com/LenhSanXuat/xemLSX/$id");
+            $kq = $this->yc->updateStatus(1, $id_ycsx);
+            echo "<script>alert('Tạo lệnh thành công')</script>";
+            echo '<script type="text/javascript">
+            window.location = "https://hethongquanlisanxuat.herokuapp.com/YeuCauSanXuat"
+       </script>';
         } else {
             $ngay = date("Y-m-d") . "<br>";
 
@@ -65,19 +63,21 @@ class LenhSanXuat extends Controller
                 $kq1 = $this->ctlsx->insertCTLSX($kq, $row[2], $row[5], 0, $row[5]);
                 echo $kq1;
             }
-            $_SESSION['ycmh'] = $ycmh;
-            $info = (object)[$id_ycsx, $kq, "Yêu cầu mua hàng"];
-            $_SESSION['info_ycmh'] = $info;
+
             // var_dump(1);
             // die();
+            $kq = $this->yc->updateStatus(1, $id_ycsx);
             $_SESSION[$name] = "True";
-            header("Location: https://hethongquanlisanxuat.herokuapp.com/LenhSanXuat/xemLSX/$kq");
+            echo "Thành lệnh thành công";
+            echo '<script type="text/javascript">
+            window.location = "https://hethongquanlisanxuat.herokuapp.com/YeuCauSanXuat"
+       </script>';
         }
     }
 
     function xemLSX($id_lsx)
     {
-        if (!isset($_SESSION['admin'])) {
+        if (!isset($_SESSION['nvsx'])) {
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }
@@ -93,7 +93,7 @@ class LenhSanXuat extends Controller
     }
     function TienDoSanXuat($id_lsx)
     {
-        if (!isset($_SESSION['admin'])) {
+        if (!isset($_SESSION['nvsx'])) {
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }
@@ -109,7 +109,7 @@ class LenhSanXuat extends Controller
     }
     function updateLenhSX()
     {
-        if (!isset($_SESSION['admin'])) {
+        if (!isset($_SESSION['nvsx'])) {
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }
@@ -121,7 +121,7 @@ class LenhSanXuat extends Controller
     }
     function CapNhatTrangThaiLSX()
     {
-        if (!isset($_SESSION['admin'])) {
+        if (!isset($_SESSION['nvsx'])) {
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }
@@ -139,7 +139,7 @@ class LenhSanXuat extends Controller
     }
     function CapNhatTrangThaiCĐ()
     {
-        if (!isset($_SESSION['admin'])) {
+        if (!isset($_SESSION['nvsx'])) {
             session_start();
             header('location: https://hethongquanlisanxuat.herokuapp.com/');
         }

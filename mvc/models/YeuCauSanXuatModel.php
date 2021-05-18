@@ -20,4 +20,10 @@ class YeuCauSanXuatModel extends DB
         $query = mysqli_query($this->con, $sql);
         return $query;
     }
+    function updateStatus($status, $id_lenh)
+    {
+        $sql = "UPDATE `yeucausanxuat` SET `status`='$status' WHERE id_ycsx='$id_lenh'";
+        $query = mysqli_query($this->con, $sql);
+        return $query;
+    }
 }

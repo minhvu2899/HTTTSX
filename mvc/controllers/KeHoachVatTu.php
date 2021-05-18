@@ -27,7 +27,7 @@ class KeHoachVatTu extends Controller
 
     function addKHVT($id_ycsx, $id_material, $quantity)
     {
-        $name = `ycsx$id_ycsx`;
+        $name = "ycsx$id_ycsx";
         // unset($_SESSION[$name]);
         if (isset($_SESSION[$name])) {
             header("Location: https://hethongquanlisanxuat.herokuapp.com/KeHoachVatTu/xemKHVT/$id_ycsx");
@@ -85,7 +85,11 @@ class KeHoachVatTu extends Controller
             }
             $_SESSION[$name] = "true";
             $kq = $this->khvt->insertKHVT($id_ycsx, $id_material,  $quantity,  $quantity);
-            header("Location: https://hethongquanlisanxuat.herokuapp.com/KeHoachVatTu/xemKHVT/$id_ycsx");
+            echo "Thành kế hoạch vật tư thành công";
+            echo `<script type="text/javascript">
+            window.location = "https://hethongquanlisanxuat.herokuapp.com/KeHoachVatTu/xemKHVT/$id_ycsx"
+       </script>`;
+            // header("Location: https://hethongquanlisanxuat.herokuapp.com/KeHoachVatTu/xemKHVT/$id_ycsx");
         }
     }
     function xemKHVT($id_ycsx)

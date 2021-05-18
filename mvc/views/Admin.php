@@ -80,35 +80,23 @@ if (!isset($_SESSION)) {
                 <p>Kế hoạch vật tư</p>
               </a>
             </li> -->
+
+
+          <?php } else if (isset($_SESSION['nvsx'])) { ?>
             <li class="nav-item ">
               <a class="nav-link" href="LenhSanXuat">
                 <i class="material-icons">notifications</i>
                 <p>Lệnh sản xuất</p>
               </a>
             </li>
-          <?php } ?>
-          <?php if (isset($_SESSION['admin'])) { ?>
-            <li class="nav-item ">
-              <a class="nav-link" href="Admin/QuytrinhSX">
-                <i class="material-icons">library_books</i>
-                <p>Quản lí quy trình sản xuất</p>
-              </a>
-            </li>
-          <?php } else if (isset($_SESSION['nvsx'])) { ?>
             <li class="nav-item ">
               <a class="nav-link" href="QuanLiSX/QuytrinhSX">
                 <i class="material-icons">library_books</i>
                 <p>Quản lí quy trình sản xuất</p>
               </a>
             </li>
-          <?php } ?>
-          <?php if (isset($_SESSION['admin'])) { ?>
-            <li class="nav-item ">
-              <a class="nav-link" href="Admin/QuanLiKho">
-                <i class="fas fa-store-alt"></i>
-                <p>Quản lí kho hàng</p>
-              </a>
-            </li>
+
+
           <?php } else if (isset($_SESSION['nvk'])) { ?>
             <li class="nav-item ">
               <a class="nav-link" href="QuanLiKho/NhapKho">

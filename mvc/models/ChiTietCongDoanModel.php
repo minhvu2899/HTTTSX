@@ -27,4 +27,12 @@ class ChiTietCongDoanModel extends DB
         $num = mysqli_num_rows($query);
         return $num;
     }
+    function checkTonTai($id_lenh)
+    {
+        $sql = "SELECT * FROM `chitietcongdoan` WHERE chitietcongdoan.id_lenh='$id_lenh'
+        ";
+        $query = mysqli_query($this->con, $sql);
+        $num = mysqli_num_rows($query);
+        return $num;
+    }
 }
