@@ -174,14 +174,14 @@ class LenhSanXuat extends Controller
         $listInput = [];
 
         while ($vt = mysqli_fetch_array($list)) {
-            array_push($listInput, $vt);
+            array_push($listInput, (object)$vt);
             $data .= " <tr>
             <td>$vt[0]</td>
             <td>$vt[1]</td>
             <td>$vt[2]</td>
              </tr>";
         }
-        $_SESSION['listMaterials1'] = $listInput;
+        $_SESSION['listMaterials2'] = $listInput;
         echo  $data;
     }
     function ChiTietTienDo($id_ctlsx)

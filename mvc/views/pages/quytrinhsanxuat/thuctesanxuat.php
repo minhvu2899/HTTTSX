@@ -2,11 +2,7 @@
     <form action="" method="POST">
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group">
-                    <label for="">Tên vật tư</label>
-                    <input type="text" class="form-control" name="id_vt" id="" aria-describedby="helpId" placeholder="">
 
-                </div>
                 <div class="form-group">
                     <label for="">Số lượng hoàn thành</label>
                     <input type="text" class="form-control" name="soluonght" id="" aria-describedby="helpId" placeholder="">
@@ -45,7 +41,7 @@
                                     ID_TTSX
                                 </th>
                                 <th>ID_LSX</th>
-                                <th>ID vật tư</th>
+
                                 <th>Số lượng nhập </th>
                                 <th>Ngày bắt đầu</th>
                                 <th>Ngày kết thúc</th>

@@ -43,11 +43,19 @@ class QuanLiKho extends Controller
                     }
                 } else if (isset($_SESSION['listMaterials1'])) {
                     $listInput = $_SESSION['listMaterials1'];
-                    print_r($_SESSION['listMaterials1']);
+                    // print_r($_SESSION['listMaterials1']);
 
                     foreach ($listInput as $vt) {
 
                         $kq = $this->hdn->insertHĐN($id_pn, $vt->id_material, $vt->soluongnhap);
+                    }
+                } else if (isset($_SESSION['listMaterials2'])) {
+                    $listInput = $_SESSION['listMaterials2'];
+
+
+                    foreach ($listInput as $vt) {
+
+                        $kq = $this->hdn->insertHĐN($id_pn, $vt->id_material, $vt->soluongcan);
                     }
                 }
                 $listTonKho = $this->kho->getTonKho();
