@@ -17,9 +17,7 @@
                             <th>IDVT</th>
                             <th>Tên vật tư</th>
                             <th>Số lượng </th>
-                            <th>
-                                Hành động
-                            </th>
+
                         </thead>
                         <tbody>
                             <?php

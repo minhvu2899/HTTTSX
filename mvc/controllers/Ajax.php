@@ -21,11 +21,11 @@ class Ajax extends Controller
     }
     function GetAllDH()
     {
-        $listDH = $this->dh->getListDH();
+        $listDH = $this->dh->getListDHChuaHT();
         $data = "<option value=''>Chọn đơn hàng</option>";
         while ($dh = mysqli_fetch_array($listDH)) {
             $data .= "
-            <option value='$dh[0]'>$dh[0]-$dh[5]</option>";
+            <option value='$dh[0]'>Mã đơn hàng:$dh[0]-Tên KH:$dh[6]</option>";
         }
         echo  $data;
     }

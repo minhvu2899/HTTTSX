@@ -66,12 +66,12 @@
                                             <?php } ?>
                                         </td>
 
-                                        <td>
+                                        <!-- <td>
                                             <div>
                                                 <a href="" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
                                                 <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                             </div>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                 <?php
                                 }

@@ -9,6 +9,13 @@ class DonHangModel extends DB
         $query = mysqli_query($this->con, $sql);
         return $query;
     }
+    public function getListDHChuaHT()
+    {
+        $sql = "SELECT distinct donhang.*,khachhang.name,khachhang.diachi,khachhang.sdt,materials.name_material FROM khachhang,materials,donhang WHERE donhang.id_user= khachhang.id_user AND materials.id_material=donhang.id_material and donhang.status!=2
+        ";
+        $query = mysqli_query($this->con, $sql);
+        return $query;
+    }
     public function editDH($id, $ten, $diachi, $sdt, $email, $soluongnhap)
     {
         $sql = "update nhacungcap set

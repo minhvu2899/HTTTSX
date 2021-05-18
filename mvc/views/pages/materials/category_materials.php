@@ -29,9 +29,7 @@
                                 </th>
                                 <th>Tồn lí thuyết</th>
                                 <th>Tồn thực tế</th>
-                                <th>
-                                    Hành động
-                                </th>
+
                             </thead>
                             <tbody>
                                 <?php
@@ -70,12 +68,7 @@
                                             <?php echo $row[6] ?>
                                         </td>
 
-                                        <td>
-                                            <div>
-                                                <span class="fa fa-edit btn btn-success"></span>
-                                                <span class="fa fa-remove btn btn-danger"></span>
-                                            </div>
-                                        </td>
+
                                     </tr>
                                 <?php
                                 }

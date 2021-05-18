@@ -122,9 +122,9 @@
                                                 <h2 class="badge badge-warning">Kế hoạch</h2>
                                             <?php } elseif ($row[6] == 1) { ?>
                                                 <span class="badge badge-primary">Đang thực hiện</span>
-                                            <?php } elseif ($row[6] == 2) { ?>
-                                                <span class="badge badge-danger">Hủy bỏ</span>
                                             <?php } elseif ($row[6] == 3) { ?>
+                                                <span class="badge badge-danger">Hủy bỏ</span>
+                                            <?php } elseif ($row[6] == 2) { ?>
                                                 <span class="badge badge-success">Hoàn thành</span>
                                             <?php } ?>
                                         </td>

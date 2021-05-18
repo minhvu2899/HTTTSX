@@ -76,12 +76,7 @@
                                         <td>
                                             <?php echo $value['tonkho']; ?>
                                         </td>
-                                        <td>
-                                            <div>
-                                                <a class="btn btn-light" href="QuanLiKho/chiTietHĐX/<?php echo $row[0] ?>"><i class="fas fa-eye"></i></a>
 
-                                            </div>
-                                        </td>
                                     </tr>
                                 <?php
                                 }

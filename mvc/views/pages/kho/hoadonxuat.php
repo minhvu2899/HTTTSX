@@ -15,10 +15,13 @@
                                     <input type="date" class="form-control" name="ngayxuat" id="" aria-describedby="helpId" placeholder="">
 
                                 </div>
-                                <div class="form-group  mt-5 " style="margin-top:43px">
+                                <div class="form-group">
                                     <label for="">Nhân viên nhập</label>
-                                    <input type="text" class="form-control" name="nvk" id="" aria-describedby="helpId" placeholder="">
+                                    <select class="form-control" name="nvk" id="nvk">
+                                        <option value="<?php if (isset($_SESSION['nvk'])) echo $_SESSION['nvk'][0]; ?>"><?php if (isset($_SESSION['nvk'])) echo $_SESSION['nvk'][1]; ?></option>
 
+
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">

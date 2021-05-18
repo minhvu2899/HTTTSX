@@ -37,6 +37,3 @@
     </div>
 
 </div>
-<script>
-    alert("[tk:admin,nvk,nvsx], mk:123456]");
-</script>

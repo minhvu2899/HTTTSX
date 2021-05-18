@@ -14,12 +14,10 @@
                             <th>
                                 ID_PN
                             </th>
-                            <th>IDVT</th>
+
                             <th>Tên vật tư</th>
                             <th>Số lượng nhập </th>
-                            <th>
-                                Hành động
-                            </th>
+
                         </thead>
                         <tbody>
                             <?php

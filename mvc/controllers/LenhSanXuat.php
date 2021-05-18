@@ -21,6 +21,7 @@ class LenhSanXuat extends Controller
             $check = $this->ctcd->checkStatus($row[0]);
             if ($check == 0 && $checkTonTai != 0) {
                 $kq = $this->lsx->updateStatus(2, $row[0]);
+                $kq1 = $this->yc->updateStatus(2, $row[1]);
             }
         }
         $listLenhSX = $this->lsx->getListLSX();
